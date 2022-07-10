@@ -1,0 +1,33 @@
+<mat-toolbar color="primary">
+  <span><img class="image" src="{{BaseURL}}images/logo.png" height=30 width=90 alt="Pizzeria"></span>
+  <a mat-button routerLink='/home' routerLinkActive='active'><span class="fa fa-home fa-lg"></span> Главная</a>
+  <a mat-button routerLink='/about' routerLinkActive='active'><span class="fa fa-info fa-lg"></span> О пиццерии</a>
+  <a mat-button routerLink='/menu' routerLinkActive='active'><span class="fa fa-list fa-lg"></span> Меню</a>
+  <a mat-button routerLink='/contact' routerLinkActive='active'><span class="fa fa-address-card fa-lg"></span> Контакты</a>
+
+  <span class="flex-spacer"></span>
+  <a mat-button (click)="openOrderForm()">Корзина
+    <mat-icon matBadge="{{pizzaService.orderedPizzas.length}}" matBadgeColor="warn">shopping_cart</mat-icon>
+  </a>
+
+</mat-toolbar>
+
+<div class="container jumbotron"
+     fxLayout="row"
+     fxLayout.sm="column"
+     fxLayout.xs="column"
+     fxLayoutAlign.xs="start center"
+     fxLayoutAlign.sm="start center"
+     fxLayoutAlign.gt-sm="center center"
+     fxLayoutGap="10px">
+
+  <div fxFlex fxFlex.gt-sm="50%">
+    <h1>Pizzeria</h1>
+    <p>В нашей пиццерии готовят настоящую пиццу в лучших неаполитанских традициях: в печи на дровах, из лучших
+      продуктов, в руках мастеров своего дела</p>
+  </div>
+  <div fxFlex fxFlex.gt-sm="20%">
+    <img class="image" src="{{BaseURL}}images/logo.png" alt="Logo">
+  </div>
+  <div fxFlex></div>
+</div>
